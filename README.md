@@ -8,7 +8,7 @@ Please see [FLIP-181](https://cwiki.apache.org/confluence/x/CAUBCw) for further 
 In order to build the project one needs maven and java.
 Since the authentication handler is Flink version dependent please make sure the version are matching in `pom.xml`.
 ```
-mmvn clean install
+mvn clean install
 ```
 
 ## How to install

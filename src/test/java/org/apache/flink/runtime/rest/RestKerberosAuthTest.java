@@ -23,7 +23,6 @@ import org.apache.flink.configuration.SecurityOptions;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.rest.util.TestRestServerEndpoint;
 import org.apache.flink.runtime.rpc.RpcUtils;
-import org.apache.flink.runtime.testutils.TestingUtils;
 import org.apache.flink.runtime.webmonitor.RestfulGateway;
 import org.apache.flink.runtime.webmonitor.TestingRestfulGateway;
 
@@ -45,6 +44,8 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -69,6 +70,8 @@ public class RestKerberosAuthTest {
 
     private static RestServerEndpoint serverEndpoint;
     private static RestServerEndpointITCase.TestVersionHandler testVersionHandler;
+
+    private final Executor testExecutor = Executors.newSingleThreadExecutor();
 
     @BeforeClass
     public static void init() throws Exception {
@@ -113,8 +116,7 @@ public class RestKerberosAuthTest {
     public void testAuthSuccessfulWithTicketCache() throws Exception {
         Configuration goodCredsConf = getClientConfig();
 
-        RestClient restClientWithGoodCredentials =
-                new RestClient(goodCredsConf, TestingUtils.defaultExecutor());
+        RestClient restClientWithGoodCredentials = new RestClient(goodCredsConf, testExecutor);
         final Map<String, String> oldEnv = System.getenv();
         try {
             Map<String, String> env = new HashMap<>(1);
@@ -138,8 +140,7 @@ public class RestKerberosAuthTest {
         goodCredsConf.set(SecurityOptions.KERBEROS_LOGIN_KEYTAB, KEYTAB_FILE);
         goodCredsConf.set(SecurityOptions.KERBEROS_LOGIN_PRINCIPAL, CLIENT_PRINCIPAL);
 
-        RestClient restClientWithGoodCredentials =
-                new RestClient(goodCredsConf, TestingUtils.defaultExecutor());
+        RestClient restClientWithGoodCredentials = new RestClient(goodCredsConf, testExecutor);
         restClientWithGoodCredentials
                 .sendRequest(
                         SERVER_HOST,
@@ -153,8 +154,7 @@ public class RestKerberosAuthTest {
         Configuration noCredsConf = getClientConfig();
         noCredsConf.set(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, false);
 
-        RestClient restClientWithBadCredentials =
-                new RestClient(noCredsConf, TestingUtils.defaultExecutor());
+        RestClient restClientWithBadCredentials = new RestClient(noCredsConf, testExecutor);
 
         try {
             restClientWithBadCredentials
