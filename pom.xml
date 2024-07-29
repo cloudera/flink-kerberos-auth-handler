@@ -22,7 +22,7 @@ under the License.
 
 	<groupId>com.cloudera.flink</groupId>
 	<artifactId>flink-kerberos-auth-handler</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 
 	<licenses>
 		<license>
@@ -54,9 +54,9 @@ under the License.
 		<java.version>1.8</java.version>
 		<scala.binary.version>2.12</scala.binary.version>
 
-		<flink.version>1.15.3</flink.version>
+		<flink.version>1.19.1</flink.version>
 		<hadoop.version>2.8.5</hadoop.version>
-		<junit.version>4.13.2</junit.version>
+		<junit.version>5.10.1</junit.version>
 		<log4j.version>2.19.0</log4j.version>
 
 		<!-- Plugin versions. -->
@@ -165,12 +165,30 @@ under the License.
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-log4j12</artifactId>
 				</exclusion>
+					<exclusion>
+						<artifactId>junit</artifactId>
+						<groupId>junit</groupId>
+					</exclusion>
 			</exclusions>
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
