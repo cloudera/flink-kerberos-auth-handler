@@ -22,38 +22,36 @@ import org.apache.flink.configuration.HistoryServerOptions;
 import org.apache.flink.test.util.SecureTestEnvironment;
 
 import com.cloudera.flink.config.KerberosAuthOptions;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Paths;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** Test for the HistoryServer Kerberos integration. */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HistoryServerKerberosTest {
 
-    @Rule public final TemporaryFolder secureEnvironmentBaseFolder = new TemporaryFolder();
-    @Rule public final TemporaryFolder historyServerBaseFolder = new TemporaryFolder();
+    @TempDir private static File secureEnvironmentBaseFolder;
+    @TempDir private static File historyServerBaseFolder;
 
     private File jmDirectory;
     private String servicePrincipal;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         String principal = "HTTP/" + SecureTestEnvironment.HOST_NAME;
         SecureTestEnvironment.prepare(secureEnvironmentBaseFolder, principal);
         servicePrincipal = principal + "@" + SecureTestEnvironment.getRealm();
-        jmDirectory = historyServerBaseFolder.newFolder("jm");
+        jmDirectory = Paths.get(historyServerBaseFolder.getAbsolutePath(), "jm").toFile();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         SecureTestEnvironment.cleanup();
     }
@@ -68,7 +66,7 @@ public class HistoryServerKerberosTest {
         try {
             hs.start();
             String baseUrl = "http://localhost:" + hs.getWebPort();
-            Assert.assertEquals(200, getHTTPResponseCode(baseUrl));
+            assertEquals(200, getHTTPResponseCode(baseUrl));
         } finally {
             hs.stop();
         }
@@ -83,7 +81,7 @@ public class HistoryServerKerberosTest {
         try {
             hs.start();
             String baseUrl = "http://localhost:" + hs.getWebPort();
-            Assert.assertEquals(401, getHTTPResponseCode(baseUrl));
+            assertEquals(401, getHTTPResponseCode(baseUrl));
         } finally {
             hs.stop();
         }
@@ -91,12 +89,12 @@ public class HistoryServerKerberosTest {
 
     private Configuration getServerConfig() {
         Configuration config = new Configuration();
-        config.setString(
+        config.set(
                 HistoryServerOptions.HISTORY_SERVER_ARCHIVE_DIRS, jmDirectory.toURI().toString());
-        config.setBoolean(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, true);
-        config.setString(
+        config.set(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, true);
+        config.set(
                 KerberosAuthOptions.SECURITY_SPNEGO_KEYTAB, SecureTestEnvironment.getTestKeytab());
-        config.setString(KerberosAuthOptions.SECURITY_SPNEGO_PRINCIPAL, servicePrincipal);
+        config.set(KerberosAuthOptions.SECURITY_SPNEGO_PRINCIPAL, servicePrincipal);
         return config;
     }
 

@@ -29,8 +29,8 @@ import org.apache.flink.runtime.webmonitor.TestingRestfulGateway;
 import com.cloudera.flink.config.KerberosAuthOptions;
 import org.apache.hadoop.minikdc.KerberosSecurityTestcase;
 import org.apache.hadoop.security.authentication.util.KerberosName;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import sun.security.krb5.KrbAsReqBuilder;
 import sun.security.krb5.PrincipalName;
 import sun.security.krb5.internal.ccache.Credentials;
@@ -47,9 +47,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /** This test validates Kerberos authentication for rest endpoints. */
 public class RestKerberosAuthTest {
@@ -73,7 +73,7 @@ public class RestKerberosAuthTest {
 
     private final Executor testExecutor = Executors.newSingleThreadExecutor();
 
-    @BeforeClass
+    @BeforeAll
     public static void init() throws Exception {
         KerberosSecurityTestcase mockKerberos = new KerberosSecurityTestcase();
         mockKerberos.startMiniKdc();
@@ -171,7 +171,7 @@ public class RestKerberosAuthTest {
 
     private static Configuration getServerConfig() {
         final Configuration conf = new Configuration();
-        conf.setString(RestOptions.ADDRESS, SERVER_HOST);
+        conf.set(RestOptions.ADDRESS, SERVER_HOST);
         conf.set(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, true);
         conf.set(KerberosAuthOptions.SECURITY_SPNEGO_KEYTAB, KEYTAB_FILE);
         conf.set(KerberosAuthOptions.SECURITY_SPNEGO_PRINCIPAL, SERVER_PRINCIPAL);
@@ -180,7 +180,7 @@ public class RestKerberosAuthTest {
 
     private static Configuration getClientConfig() {
         final Configuration conf = new Configuration();
-        conf.setLong(RestOptions.IDLENESS_TIMEOUT, 5000L);
+        conf.set(RestOptions.IDLENESS_TIMEOUT, 5000L);
         conf.set(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, true);
         return conf;
     }
