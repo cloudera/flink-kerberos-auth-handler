@@ -90,7 +90,8 @@ public class ServerKerberosAuthHandlerFactory implements InboundChannelHandlerFa
         }
 
         if (!principal.startsWith("HTTP/") && !principal.equals("*")) {
-            throw new ConfigurationException("Kerberos auth principal must start with 'HTTP/'");
+            throw new ConfigurationException(
+                    "Kerberos auth principal must start with 'HTTP/' or be a wildcard '*'.");
         }
 
         String[] resolvedPrincipals = getPrincipals(keytab, principal);
