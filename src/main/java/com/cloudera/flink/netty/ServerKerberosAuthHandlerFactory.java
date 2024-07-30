@@ -89,7 +89,7 @@ public class ServerKerberosAuthHandlerFactory implements InboundChannelHandlerFa
             throw new ConfigurationException("Keytab does not exist: " + keytab);
         }
 
-        if (!principal.startsWith("HTTP/")) {
+        if (!principal.startsWith("HTTP/") && !principal.equals("*")) {
             throw new ConfigurationException("Kerberos auth principal must start with 'HTTP/'");
         }
 
