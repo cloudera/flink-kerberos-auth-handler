@@ -45,6 +45,18 @@ public class ServerKerberosAuthHandlerFactoryTest {
     }
 
     @Test
+    public void validatesWildcardPrincipal() throws ConfigurationException {
+        Configuration conf = new Configuration();
+        conf.set(SPNEGO_AUTH_ENABLED, true);
+        conf.set(SECURITY_SPNEGO_PRINCIPAL, "*");
+        conf.set(
+                SECURITY_SPNEGO_KEYTAB,
+                ServerKerberosAuthHandlerFactoryTest.class.getResource("/test.keytab").getFile());
+        ServerKerberosAuthHandlerFactory factory = new ServerKerberosAuthHandlerFactory();
+        assertTrue(factory.createHandler(conf, new HashMap<>()).isPresent());
+    }
+
+    @Test
     public void throwsOnNonHttpPrincipal() {
         Configuration conf = new Configuration();
         conf.set(SPNEGO_AUTH_ENABLED, true);
