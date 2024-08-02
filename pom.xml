@@ -194,6 +194,16 @@ under the License.
 		</dependency>
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.flink</groupId>
+				<artifactId>flink-shaded-netty</artifactId>
+				<version>4.1.100.Final-19.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
