@@ -39,6 +39,7 @@ import sun.security.krb5.internal.ccache.CredentialsCache;
 import javax.security.auth.kerberos.KeyTab;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -180,7 +181,7 @@ public class RestKerberosAuthTest {
 
     private static Configuration getClientConfig() {
         final Configuration conf = new Configuration();
-        conf.set(RestOptions.IDLENESS_TIMEOUT, 5000L);
+        conf.set(RestOptions.IDLENESS_TIMEOUT, Duration.ofSeconds(5));
         conf.set(KerberosAuthOptions.SPNEGO_AUTH_ENABLED, true);
         return conf;
     }
