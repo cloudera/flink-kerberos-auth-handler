@@ -1,5 +1,5 @@
-flink-kerberos-auth-handler 1.0
-Copyright 2021  Cloudera Inc.  All Rights Reserved.
+flink-kerberos-auth-handler 1.3
+Copyright 2025  Cloudera Inc.  All Rights Reserved.
 
 
 
@@ -39,13 +39,13 @@ Apache Directory LDAP API I18n 1.0.0-M20 : Apache License 2.0
 Apache Directory LDAP API Model 1.0.0-M20 : Apache License 2.0
 Apache Directory LDAP API Utilities 1.0.0-M20 : Apache License 2.0
 Apache Directory Studio 2.0.0-M15 : Apache License 2.0
-Apache Hadoop 2.8.3 : Apache License 2.0
-Apache Hadoop Annotations 2.8.3 : Apache License 2.0
-Apache Hadoop Auth 2.8.3 : Apache License 2.0
-Apache Hadoop MiniKDC 2.8.3 : Apache License 2.0
+Apache Hadoop 2.10.2 : Apache License 2.0
+Apache Hadoop Annotations 2.10.2 : Apache License 2.0
+Apache Hadoop Auth 2.10.2 : Apache License 2.0
+Apache Hadoop MiniKDC 2.10.2 : Apache License 2.0
 Apache HttpClient 4.5.2 : Apache License 2.0
 Apache HttpComponents Core 4.4.4 : Apache License 2.0
-Apache Log4j 2.14.1 : Apache License 2.0
+Apache Log4j 2.24.3 : Apache License 2.0
 Apache MINA Core API 2.0.7 : Apache License 2.0
 Apache ZooKeeper 3.4.6 : Apache License 2.0
 ApacheDS AdministrativePoint Interceptor 2.0.0-M15 : Apache License 2.0
@@ -87,12 +87,12 @@ Curator Testing 2.12.0 : Apache License 2.0
 Data Mapper for Jackson 1.9.13 : Apache License 2.0
 Ehcache 2.4.4 : Apache License 2.0
 FindBugs jsr305 1.3.9 : Apache License 2.0
-flink-shaded-asm-7 7.1-14.0 : Apache License 2.0
-flink-shaded-force-shading 14.0 : Apache License 2.0
-flink-shaded-guava-18 30.1.1-jre-14.0 : Apache License 2.0
-flink-shaded-jackson-2 2.12.4-14.0 : Apache License 2.0
-flink-shaded-netty-4 4.1.65.Final-14.0 : Apache License 2.0
-flink-shaded-zookeeper-3.5 3.4.14-14.0 : Apache License 2.0
+flink-shaded-asm-9 9.5-17.0 : Apache License 2.0
+flink-shaded-force-shading 17.0 : Apache License 2.0
+flink-shaded-guava 31.1-jre-17.0 : Apache License 2.0
+flink-shaded-jackson-2 2.14.2-17.0 : Apache License 2.0
+flink-shaded-netty-4 4.1.91.Final-17.0 : Apache License 2.0
+flink-shaded-zookeeper-3 3.7.1-17.0 : Apache License 2.0
 google-gson 2.2.4 : Apache License 2.0
 Guava: Google Core Libraries for Java 11.0.2 : Apache License 2.0
 Hamcrest 1.3 : BSD 3-clause "New" or "Revised" License
@@ -117,19 +117,19 @@ json-smart 1.1.1 : Apache License 2.0
 JUnit 4.13.2 : Eclipse Public License 1.0
 JUnit Jupiter (Aggregator) 5.7.2 : Eclipse Public License 2.0
 kryo 2.24.0 : BSD 3-clause "New" or "Revised" License
-Log4J API 2.14.1 : Apache License 2.0
+Log4J API 2.24.3 : Apache License 2.0
 LZ4 and xxHash 1.8.0 : Apache License 2.0
 minlog 1.2 : BSD 3-clause "New" or "Revised" License
 Netty Project 3.7.0.Final : Apache License 2.0
 Nimbus-JOSE-JWT 3.9 : Apache License 2.0
 objenesis 2.1 : Apache License 2.0
 org.apiguardian:apiguardian-api 1.1.0 : Apache License 2.0
-org.junit.jupiter:junit-jupiter-api 5.7.2 : Eclipse Public License 2.0
-org.junit.jupiter:junit-jupiter-engine 5.7.2 : Eclipse Public License 2.0
-org.junit.jupiter:junit-jupiter-params 5.7.2 : Eclipse Public License 2.0
-org.junit.platform:junit-platform-commons 1.7.2 : Eclipse Public License 2.0
-org.junit.platform:junit-platform-engine 1.7.2 : Eclipse Public License 2.0
-org.junit.vintage:junit-vintage-engine 5.7.2 : Eclipse Public License 2.0
+org.junit.jupiter:junit-jupiter-api 5.11.4 : Eclipse Public License 2.0
+org.junit.jupiter:junit-jupiter-engine 5.11.4 : Eclipse Public License 2.0
+org.junit.jupiter:junit-jupiter-params 5.11.4 : Eclipse Public License 2.0
+org.junit.platform:junit-platform-commons 1.11.4 : Eclipse Public License 2.0
+org.junit.platform:junit-platform-engine 1.11.4 : Eclipse Public License 2.0
+org.junit.vintage:junit-vintage-engine 5.10.1 : Eclipse Public License 2.0
 org.opentest4j:opentest4j 1.2.0 : Apache License 2.0
 ParaNamer Core 2.3 : BSD 3-clause "New" or "Revised" License
 Protocol Buffer Java API 2.5.0 : BSD 3-clause "New" or "Revised" License
@@ -137,7 +137,7 @@ Scala 2.12.7 : BSD 3-clause "New" or "Revised" License
 scala-compiler 2.12.7 : BSD 3-clause "New" or "Revised" License
 scala-xml 1.0.6 : BSD 3-clause "New" or "Revised" License
 SLF4J API Module 1.7.15 : MIT License
-SLF4J Binding 2.14.1 : Apache License 2.0
+SLF4J Binding 2.24.3 : Apache License 2.0
 snappy-java 1.1.8.3 : Apache License 2.0
 StAX 1.0-2 : (GNU General Public License v3.0 only OR Common Development and Distribution License 1.0)
 xmlenc 0.52 : BSD 3-clause "New" or "Revised" License
@@ -244,7 +244,7 @@ Illinois, Urbana-Champaign.
 ---
 
 Apache License 2.0
-(An open source Java toolkit for Amazon S3 0.9.0, Apache Avro 1.7.4, Apache Commons BeanUtils 1.7.0, Apache Commons BeanUtils 1.8.0, Apache Commons CLI 1.3.1, Apache Commons Codec 1.4, Apache Commons Collections 3.2.2, Apache Commons Compress 1.4.1, Apache Commons Configuration 1.6, Apache Commons Lang 2.6, Apache Commons Lang 3.3.2, Apache Commons Logging 1.1.3, Apache Commons Math 3.1.1, Apache Commons Net 3.1, Apache Commons Pool 1.6, Apache Directory API All 1.0.0-M20, Apache Directory API ASN.1 API 1.0.0-M20, Apache Directory API ASN.1 BER 1.0.0-M20, Apache Directory LDAP API Client API 1.0.0-M20, Apache Directory LDAP API Codec Core 1.0.0-M20, Apache Directory LDAP API Extras ACI 1.0.0-M20, Apache Directory LDAP API Extras Codec 1.0.0-M20, Apache Directory LDAP API Extras Codec API 1.0.0-M20, Apache Directory LDAP API Extras Stored Procedures 1.0.0-M20, Apache Directory LDAP API Extras Trigger 1.0.0-M20, Apache Directory LDAP API Extras Util 1.0.0-M20, Apache Directory LDAP API I18n 1.0.0-M20, Apache Directory LDAP API Model 1.0.0-M20, Apache Directory LDAP API Utilities 1.0.0-M20, Apache Directory Studio 2.0.0-M15, Apache Hadoop 2.8.3, Apache Hadoop Annotations 2.8.3, Apache Hadoop Auth 2.8.3, Apache Hadoop MiniKDC 2.8.3, Apache HttpClient 4.5.2, Apache HttpComponents Core 4.4.4, Apache Log4j 2.14.1, Apache MINA Core API 2.0.7, Apache ZooKeeper 3.4.6, ApacheDS AdministrativePoint Interceptor 2.0.0-M15, ApacheDS Authentication Interceptor 2.0.0-M15, ApacheDS Authorization Interceptor 2.0.0-M15, ApacheDS ChangeLog Interceptor 2.0.0-M15, ApacheDS Collective Attribute Interceptor 2.0.0-M15, ApacheDS Core API 2.0.0-M15, ApacheDS Core AVL 2.0.0-M15, ApacheDS Core Shared 2.0.0-M15, ApacheDS Event Interceptor 2.0.0-M15, ApacheDS Exception Interceptor 2.0.0-M15, ApacheDS Generalized (X) DBM Partition 2.0.0-M15, ApacheDS Interceptors for Kerberos 2.0.0-M15, ApacheDS JDBM Original Implementation 2.0.0-M2, ApacheDS JDBM Partition 2.0.0-M15, ApacheDS Journal Interceptor 2.0.0-M15, ApacheDS Mavibot Partition 2.0.0-M15, ApacheDS MVCC BTree implementation 1.0.0-M1, ApacheDS Normalization Interceptor 2.0.0-M15, ApacheDS Operational Attribute Interceptor 2.0.0-M15, ApacheDS Protocol Kerberos 2.0.0-M15, ApacheDS Protocol Kerberos Codec 2.0.0-M15, ApacheDS Protocol Ldap 2.0.0-M15, ApacheDS Protocol Shared 2.0.0-M15, ApacheDS Referral Interceptor 2.0.0-M15, ApacheDS Schema Interceptor 2.0.0-M15, ApacheDS Subtree Interceptor 2.0.0-M15, ApacheDS Triggers Interceptor 2.0.0-M15, chill 0.7.6, chill-java 0.7.6, Commons IO 2.8.0, Curator Client 2.7.1, Curator Framework 2.7.1, Curator Recipes 2.7.1, Curator Testing 2.12.0, Data Mapper for Jackson 1.9.13, Ehcache 2.4.4, FindBugs jsr305 1.3.9, flink-shaded-asm-7 7.1-14.0, flink-shaded-force-shading 14.0, flink-shaded-guava-18 30.1.1-jre-14.0, flink-shaded-jackson-2 2.12.4-14.0, flink-shaded-netty-4 4.1.65.Final-14.0, flink-shaded-zookeeper-3.5 3.4.14-14.0, google-gson 2.2.4, Guava: Google Core Libraries for Java 11.0.2, htrace-core 4.0.1-incubating, jackson-core 1.9.13, jackson-module-jaxb-annotations 1.8.3, java-xmlbuilder 0.4, Javassist 3.24.0-GA, JAX-RS provider for JSON content type 1.8.3, Jettison - Json Stax implementation 1.1, Jetty: Java based HTTP/1.x, HTTP/2, Servlet, WebSocket Server 6.1.26, json-smart 1.1.1, Log4J API 2.14.1, LZ4 and xxHash 1.8.0, Netty Project 3.7.0.Final, Nimbus-JOSE-JWT 3.9, objenesis 2.1, org.apiguardian:apiguardian-api 1.1.0, org.opentest4j:opentest4j 1.2.0, SLF4J Binding 2.14.1, snappy-java 1.1.8.3)
+(An open source Java toolkit for Amazon S3 0.9.0, Apache Avro 1.7.4, Apache Commons BeanUtils 1.7.0, Apache Commons BeanUtils 1.8.0, Apache Commons CLI 1.3.1, Apache Commons Codec 1.4, Apache Commons Collections 3.2.2, Apache Commons Compress 1.4.1, Apache Commons Configuration 1.6, Apache Commons Lang 2.6, Apache Commons Lang 3.3.2, Apache Commons Logging 1.1.3, Apache Commons Math 3.1.1, Apache Commons Net 3.1, Apache Commons Pool 1.6, Apache Directory API All 1.0.0-M20, Apache Directory API ASN.1 API 1.0.0-M20, Apache Directory API ASN.1 BER 1.0.0-M20, Apache Directory LDAP API Client API 1.0.0-M20, Apache Directory LDAP API Codec Core 1.0.0-M20, Apache Directory LDAP API Extras ACI 1.0.0-M20, Apache Directory LDAP API Extras Codec 1.0.0-M20, Apache Directory LDAP API Extras Codec API 1.0.0-M20, Apache Directory LDAP API Extras Stored Procedures 1.0.0-M20, Apache Directory LDAP API Extras Trigger 1.0.0-M20, Apache Directory LDAP API Extras Util 1.0.0-M20, Apache Directory LDAP API I18n 1.0.0-M20, Apache Directory LDAP API Model 1.0.0-M20, Apache Directory LDAP API Utilities 1.0.0-M20, Apache Directory Studio 2.0.0-M15, Apache Hadoop 2.10.2, Apache Hadoop Annotations 2.10.2, Apache Hadoop Auth 2.10.2, Apache Hadoop MiniKDC 2.10.2, Apache HttpClient 4.5.2, Apache HttpComponents Core 4.4.4, Apache Log4j 2.24.3, Apache MINA Core API 2.0.7, Apache ZooKeeper 3.4.6, ApacheDS AdministrativePoint Interceptor 2.0.0-M15, ApacheDS Authentication Interceptor 2.0.0-M15, ApacheDS Authorization Interceptor 2.0.0-M15, ApacheDS ChangeLog Interceptor 2.0.0-M15, ApacheDS Collective Attribute Interceptor 2.0.0-M15, ApacheDS Core API 2.0.0-M15, ApacheDS Core AVL 2.0.0-M15, ApacheDS Core Shared 2.0.0-M15, ApacheDS Event Interceptor 2.0.0-M15, ApacheDS Exception Interceptor 2.0.0-M15, ApacheDS Generalized (X) DBM Partition 2.0.0-M15, ApacheDS Interceptors for Kerberos 2.0.0-M15, ApacheDS JDBM Original Implementation 2.0.0-M2, ApacheDS JDBM Partition 2.0.0-M15, ApacheDS Journal Interceptor 2.0.0-M15, ApacheDS Mavibot Partition 2.0.0-M15, ApacheDS MVCC BTree implementation 1.0.0-M1, ApacheDS Normalization Interceptor 2.0.0-M15, ApacheDS Operational Attribute Interceptor 2.0.0-M15, ApacheDS Protocol Kerberos 2.0.0-M15, ApacheDS Protocol Kerberos Codec 2.0.0-M15, ApacheDS Protocol Ldap 2.0.0-M15, ApacheDS Protocol Shared 2.0.0-M15, ApacheDS Referral Interceptor 2.0.0-M15, ApacheDS Schema Interceptor 2.0.0-M15, ApacheDS Subtree Interceptor 2.0.0-M15, ApacheDS Triggers Interceptor 2.0.0-M15, chill 0.7.6, chill-java 0.7.6, Commons IO 2.8.0, Curator Client 2.7.1, Curator Framework 2.7.1, Curator Recipes 2.7.1, Curator Testing 2.12.0, Data Mapper for Jackson 1.9.13, Ehcache 2.4.4, FindBugs jsr305 1.3.9, flink-shaded-asm-9 9.5-17.0, flink-shaded-force-shading 17.0, flink-shaded-guava 31.1-jre-17.0, flink-shaded-jackson-2 2.14.2-17.0, flink-shaded-netty-4 4.1.91.Final-17.0, flink-shaded-zookeeper-3 3.7.1-17.0, google-gson 2.2.4, Guava: Google Core Libraries for Java 11.0.2, htrace-core 4.0.1-incubating, jackson-core 1.9.13, jackson-module-jaxb-annotations 1.8.3, java-xmlbuilder 0.4, Javassist 3.24.0-GA, JAX-RS provider for JSON content type 1.8.3, Jettison - Json Stax implementation 1.1, Jetty: Java based HTTP/1.x, HTTP/2, Servlet, WebSocket Server 6.1.26, json-smart 1.1.1, Log4J API 2.24.3, LZ4 and xxHash 1.8.0, Netty Project 3.7.0.Final, Nimbus-JOSE-JWT 3.9, objenesis 2.1, org.apiguardian:apiguardian-api 1.1.0, org.opentest4j:opentest4j 1.2.0, SLF4J Binding 2.24.3, snappy-java 1.1.8.3)
 
 Apache License
 Version 2.0, January 2004
@@ -1742,7 +1742,7 @@ resulting litigation.
 ---
 
 Eclipse Public License 2.0
-(JUnit Jupiter (Aggregator) 5.7.2, org.junit.jupiter:junit-jupiter-api 5.7.2, org.junit.jupiter:junit-jupiter-engine 5.7.2, org.junit.jupiter:junit-jupiter-params 5.7.2, org.junit.platform:junit-platform-commons 1.7.2, org.junit.platform:junit-platform-engine 1.7.2, org.junit.vintage:junit-vintage-engine 5.7.2)
+(JUnit Jupiter (Aggregator) 5.7.2, org.junit.jupiter:junit-jupiter-api 5.11.4, org.junit.jupiter:junit-jupiter-engine 5.11.4, org.junit.jupiter:junit-jupiter-params 5.11.4, org.junit.platform:junit-platform-commons 1.11.4, org.junit.platform:junit-platform-engine 1.11.4, org.junit.vintage:junit-vintage-engine 5.10.1)
 
 Eclipse Public License - v 2.0
 ==============================
